@@ -292,6 +292,13 @@ class Scheduler:
                 self.grammar_backend = XGrammarGrammarBackend(
                     self.tokenizer, vocab_size=self.model_config.vocab_size
                 )
+            elif server_args.grammar_backend == "omni":
+                from sglang.srt.constrained.omni_backend import (
+                    OmniGrammarBackend,
+                )
+                self.grammar_backend = OmniGrammarBackend(
+                    self.tokenizer, vocab_size=self.model_config.vocab_size
+                )
             else:
                 raise ValueError(
                     f"Invalid grammar backend: {server_args.grammar_backend}"
