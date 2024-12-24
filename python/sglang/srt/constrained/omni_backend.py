@@ -22,6 +22,7 @@ class OmniGrammar(BaseGrammarObject):
         self, mask: torch.Tensor
     ) -> None:
         self.mask = mask
+        self.finished = False
 
     def accept_token(self, token: int):
         pass
@@ -68,7 +69,6 @@ class OmniGrammarBackend(BaseGrammarBackend):
         self.tokenizer = tokenizer
         self.vocab_size = vocab_size
         self.decoded_vocab = self._get_decoded_vocab()
-        self.finished = False
 
     def _get_decoded_vocab(self) -> List[str]:
         """
