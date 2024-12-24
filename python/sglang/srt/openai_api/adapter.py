@@ -512,6 +512,7 @@ def v1_generate_request(
                 "top_p": request.top_p,
                 "top_k": request.top_k,
                 "min_p": request.min_p,
+                "top_n_sigma": request.top_n_sigma,
                 "presence_penalty": request.presence_penalty,
                 "frequency_penalty": request.frequency_penalty,
                 "repetition_penalty": request.repetition_penalty,

@@ -280,6 +280,7 @@ class ChatCompletionRequest(BaseModel):
     # Extra parameters for SRT backend only and will be ignored by OpenAI models.
     top_k: int = -1
     min_p: float = 0.0
+    top_n_sigma: float = 0.0
     min_tokens: int = 0
     regex: Optional[str] = None
     repetition_penalty: float = 1.0
