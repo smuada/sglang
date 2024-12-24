@@ -68,6 +68,7 @@ class OmniGrammarBackend(BaseGrammarBackend):
         self.tokenizer = tokenizer
         self.vocab_size = vocab_size
         self.decoded_vocab = self._get_decoded_vocab()
+        self.finished = False
 
     def _get_decoded_vocab(self) -> List[str]:
         """
